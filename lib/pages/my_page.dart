@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-/// Created by xu_zhen on 2021/5/20 23:02
-/// des: 我的
+// Created by xu_zhen on 2021/5/20 23:02
+// des: 我的
 
 class MyPage extends StatefulWidget {
   @override
@@ -10,7 +10,6 @@ class MyPage extends StatefulWidget {
 }
 
 class _MyPageState extends State<MyPage> {
-  final PageController _controller = PageController(initialPage: 0);
 
   @override
   Widget build(BuildContext context) {

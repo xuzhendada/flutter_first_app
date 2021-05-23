@@ -4,8 +4,8 @@ import 'package:first_flutter_app/pages/search_page.dart';
 import 'package:first_flutter_app/pages/trip_page.dart';
 import 'package:flutter/material.dart';
 
-/// Created by xu_zhen on 2021/5/20 22:58
-/// des: 底部导航
+// Created by xu_zhen on 2021/5/20 22:58
+// des: 底部导航
 
 class TabNavigator extends StatefulWidget {
   @override
@@ -24,10 +24,15 @@ class _TabNavigatorState extends State<TabNavigator> {
       body: PageView(
         controller: _controller,
         children: [HomePage(), SearchPage(), TripPage(), MyPage()],
+        onPageChanged: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
-        type: BottomNavigationBarType.shifting,
+        type: BottomNavigationBarType.fixed,
         onTap: (index) {
           _controller.jumpToPage(index);
           setState(() {
