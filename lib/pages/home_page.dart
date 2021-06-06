@@ -10,12 +10,29 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _switchedSelected = true;
+  bool _checkSelected = true;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('首页'),
-      ),
+    return Column(
+      children: [
+        Switch(
+            value: _switchedSelected,
+            onChanged: (value) {
+              setState(() {
+                _switchedSelected = value;
+              });
+            }),
+        Checkbox(
+            value: _checkSelected,
+            onChanged: (value) {
+              setState(() {
+                _checkSelected = value;
+                print(_checkSelected);
+              });
+            })
+      ],
     );
   }
 }
