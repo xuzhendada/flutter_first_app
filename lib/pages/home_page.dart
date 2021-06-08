@@ -98,7 +98,7 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Chip(
-                label: Text("xuzhen"),
+                label: Text("xuzhen" , style: TextStyle(fontWeight: FontWeight.bold),),
                 avatar: CircleAvatar(
                   backgroundColor: Colors.blue,
                   child: Text("X"),
