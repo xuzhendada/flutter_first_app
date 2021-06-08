@@ -10,12 +10,41 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('搜索'),
+        child: RaisedButton(
+          child: Text("点击弹窗"),
+          textColor: Colors.white,
+          color: Colors.grey,
+          splashColor: Colors.blue,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+          onPressed: () {
+            showDialog(
+                context: context,
+                barrierDismissible: false,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text("这是个标题"),
+                    content: SingleChildScrollView(
+                      child: ListBody(
+                        children: [Text("内容1"), Text("内容2")],
+                      ),
+                    ),
+                    actions: [
+                      FlatButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("确定")),
+                      FlatButton(onPressed: () {}, child: Text("取消"))
+                    ],
+                  );
+                });
+          },
+        ),
       ),
     );
   }
