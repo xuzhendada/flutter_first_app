@@ -27,19 +27,26 @@ class _SearchPageState extends State<SearchPage> {
                 barrierDismissible: false,
                 builder: (BuildContext context) {
                   return AlertDialog(
-                    title: Text("这是个标题"),
+                    title: Text("这是个标题",style: TextStyle(fontWeight: FontWeight.bold),),
                     content: SingleChildScrollView(
                       child: ListBody(
                         children: [Text("内容1"), Text("内容2")],
                       ),
                     ),
                     actions: [
-                      FlatButton(
+                      MaterialButton(
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
-                          child: Text("确定")),
-                      FlatButton(onPressed: () {}, child: Text("取消"))
+                          child: Text(
+                            "确定",
+                            style: TextStyle(
+                              color: Colors.blueAccent
+                            ),
+                          )),
+                      MaterialButton(onPressed: () {
+                        print("点击了取消");
+                      }, child: Text("取消",style: TextStyle(color: Colors.blueAccent),))
                     ],
                   );
                 });
